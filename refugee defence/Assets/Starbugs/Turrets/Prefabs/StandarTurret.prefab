@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6402181773685643619}
   - component: {fileID: 1204864806}
   m_Layer: 0
-  m_Name: Turret Platform
+  m_Name: StandarTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   fireRate: 1
   enemyTag: Enemy
   rotateToChasis: {fileID: 8556436540547628954}
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 1384117871449961041, guid: 016055d83f9f50e4a8ae61db85cc2ef7, type: 3}
+  firePoint: {fileID: 5678427956302234695}
 --- !u!1 &9207439884140228739
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,8 +26,12 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
+        //Burda alltaki UpdateTarget fonksiyonunu çalýþtýrýyorum 0.5 saniye aralýklarla.
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
+
+
+    //Bu fonksiyonun amacý silahýn odaklanacaðý target'ý deðiþtiriyor. Her bir target benim range'imden çýktýktan sonra baþka bir targeta odaklanýyor. Burasý biraz karýþýk.
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -59,11 +63,13 @@ public class Turret : MonoBehaviour
     private void Update()
     {
 
+        //Bu if'in amacý target(düþman) yoksa silahý durduruyor.
         if (target == null)
             return;
 
 
 
+        //Burda target'ýn pozisyonunu alýyorum ve silah ona sadece kitleniyor.
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
@@ -72,7 +78,7 @@ public class Turret : MonoBehaviour
 
 
 
-
+        //Silah'ýn ateþ etme sýklýðýný ayarlýyorum. Ýlk ateþ ettiðinden sonra geçen süreyi belirleyen satýr ise 81. satýr.
         if(fireCountdown  <= 0)
         {
             Shoot();
@@ -86,6 +92,8 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        //Bu fonksiyonun içinde önce bullet game object'i yaratýyorum, bu bullet'ý Instantiate fonksiyonuyla kopyalýyorum. Bir target alýyor ve mermiyi oraya atýyor.
+
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
@@ -99,6 +107,8 @@ public class Turret : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+
+        //Bu fonksiyon silahýn(turret'ýn) range'ini ayarlýyor.
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }

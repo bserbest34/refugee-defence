@@ -75,6 +75,9 @@
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
+    <Compile Include="Assets\Scripts\BuildManager.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />

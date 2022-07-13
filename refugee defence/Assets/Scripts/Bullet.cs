@@ -34,8 +34,11 @@ public class Bullet : MonoBehaviour
 
 
     }
+
+    //Target'a vurmasýný saðlayan fonksiyon. 
     void HitTarget()
     {
+        //Önce mermiyi kopyalýyorum.
         GameObject effectInstance = Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectInstance, 2f);
 

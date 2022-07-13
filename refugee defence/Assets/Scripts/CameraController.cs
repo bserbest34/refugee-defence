@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
+    // Kamera kontrol script'i.
+
+
     private bool doMovement = true;
-
-
     public float panSpeed = 30f;
     public float panBorderThickness = 10f;
     public float scrollSpeed = 10f;
@@ -17,6 +19,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+
+        // Atadýðým inputlar sayesinde kameranýn saða sola öne arkaya gitmesini saðlýyorum.
         if (Input.GetKeyDown(KeyCode.Escape))
             doMovement = !doMovement;
 
@@ -42,11 +46,15 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
 
+
+        //Zoom yapma.
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
         Vector3 pos = transform.position;
 
         pos.y -= scroll * 1000 * scrollSpeed * Time.deltaTime;
+
+        //Mathf.Clamp Zoom yapabileceðim sýnýr.
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
 

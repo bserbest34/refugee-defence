@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   haveColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  positionOffset: {x: 0, y: 0.5, z: 0}
